@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QYC-cQ-Ii0">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Demo View Controller-->
+        <scene sceneID="RUe-cW-8UC">
+            <objects>
+                <viewController id="QYC-cQ-Ii0" customClass="DemoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZKb-Wd-SJ9"/>
+                        <viewControllerLayoutGuide type="bottom" id="dyt-wb-6Ka"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="auQ-db-wmk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dmr-P6-kr1">
+                                <rect key="frame" x="70" y="506" width="460" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="hj0-Hj-UWM"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sq7-Gw-fhe">
+                                <rect key="frame" x="238" y="514" width="125" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="BzU-c4-PQB"/>
+                                    <constraint firstAttribute="width" constant="125" id="ROE-5a-bK9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Open Camera"/>
+                                <connections>
+                                    <action selector="openCameraView:" destination="QYC-cQ-Ii0" eventType="touchUpInside" id="Hfk-Bk-h5A"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5O-3f-50h">
+                                <rect key="frame" x="50" y="28" width="500" height="437"/>
+                                <connections>
+                                    <outlet property="delegate" destination="QYC-cQ-Ii0" id="pEr-LB-4dO"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="A6H-Md-5GB">
+                                <rect key="frame" x="275.5" y="473" width="50" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="UsX-TY-wW8"/>
+                                    <constraint firstAttribute="height" constant="25" id="cvJ-3D-v8O"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.90449416035353536" green="0.90449416035353536" blue="0.90449416035353536" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="pageTurn:" destination="QYC-cQ-Ii0" eventType="valueChanged" id="uMp-T1-28A"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A6H-Md-5GB" firstAttribute="centerX" secondItem="auQ-db-wmk" secondAttribute="centerX" id="0tO-2E-Ftj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="G5O-3f-50h" secondAttribute="trailing" constant="30" id="3Nh-1M-Xy8"/>
+                            <constraint firstItem="Sq7-Gw-fhe" firstAttribute="top" secondItem="Dmr-P6-kr1" secondAttribute="bottom" constant="7" id="4Ba-J0-gLL"/>
+                            <constraint firstItem="Dmr-P6-kr1" firstAttribute="leading" secondItem="auQ-db-wmk" secondAttribute="leadingMargin" constant="50" id="LoB-cE-xV9"/>
+                            <constraint firstItem="Dmr-P6-kr1" firstAttribute="top" secondItem="A6H-Md-5GB" secondAttribute="bottom" constant="8" id="Mzs-l7-LaX"/>
+                            <constraint firstItem="dyt-wb-6Ka" firstAttribute="top" secondItem="Sq7-Gw-fhe" secondAttribute="bottom" constant="50" id="Vz2-4J-ikZ"/>
+                            <constraint firstItem="Sq7-Gw-fhe" firstAttribute="centerX" secondItem="auQ-db-wmk" secondAttribute="centerX" id="aWj-hA-hAo"/>
+                            <constraint firstItem="G5O-3f-50h" firstAttribute="top" secondItem="ZKb-Wd-SJ9" secondAttribute="bottom" constant="8" id="avW-6T-m6N"/>
+                            <constraint firstItem="G5O-3f-50h" firstAttribute="leading" secondItem="auQ-db-wmk" secondAttribute="leadingMargin" constant="30" id="hhx-oi-yW9"/>
+                            <constraint firstItem="A6H-Md-5GB" firstAttribute="top" secondItem="G5O-3f-50h" secondAttribute="bottom" constant="8" id="kci-Cd-KJi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dmr-P6-kr1" secondAttribute="trailing" constant="50" id="t0e-Kk-Xx6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="A6H-Md-5GB" id="WNu-l5-LIi"/>
+                        <outlet property="scrollView" destination="G5O-3f-50h" id="AdI-B1-neS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cbv-ao-ERg" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="405" y="959"/>
+        </scene>
+    </scenes>
+</document>
